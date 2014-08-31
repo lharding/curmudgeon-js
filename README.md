@@ -72,7 +72,7 @@ var settings = {
     page_title: 'Leander Harding',
     now: new Date().toString(),
     
-    /* An array of template context objects generated from the post files. Example:
+    /* Gets filled out with an array of template context objects generated from the post files. Example:
     {
       title: "Title of Post",
       date: "Jan 1, 1970 00:00:00.000",
