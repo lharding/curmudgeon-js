@@ -40,23 +40,25 @@ var settings = {
   src: {
     /* Where to look for handlebars templates. Each found file gets rendered
        using the 'blog' object below as context, and then saved with its '.hbs'
-       extension lopped off. (Thus templates should be named things like 'index.html.hbs'.) */
+       extension lopped off. (Thus templates should be named things like 
+       'index.html.hbs'.) */
     templates: ['templates/*.hbs'],
    
-    /* Where to look for handlebars partials. The partial name will be the filename minus
-       extension, e.g. global_header.hbs -> {{> global_header }} */
+    /* Where to look for handlebars partials. The partial name will be the filename
+       minus extension, e.g. global_header.hbs -> {{> global_header }} */
     partials: ['templates/partials/**/*.hbs'],
     
     /* Where to look for blog posts. */
     posts:    ['blog/**/*.blog'],
     
-    /* A website skeleton containing any styles or assets you want. Gets copied into the
-    output directory when building. */
+    /* A website skeleton containing any styles or assets you want. Gets copied into 
+    the output directory when building. */
     skel:     ['skel/**/*']
   },
   paths: {
-    /* The template file to use for post permalink pages. The context passed to the template
-    is the 'blog' object below merged with the post context (see below) for the post being rendered. */
+    /* The template file to use for post permalink pages. The context passed to the
+       template is the 'blog' object below merged with the post context (see below) 
+       for the post being rendered. */
     postBodyTemplate: 'templates/partials/post_full.hbs',
     
     /* The directory to put output files in. */
@@ -72,7 +74,8 @@ var settings = {
     page_title: 'Leander Harding',
     now: new Date().toString(),
     
-    /* Gets filled out with an array of template context objects generated from the post files. Example:
+    /* Gets filled out with an array of template context objects generated from the 
+       post files. Example:
     {
       title: "Title of Post",
       date: "Jan 1, 1970 00:00:00.000",
