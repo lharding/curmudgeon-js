@@ -1,0 +1,13 @@
+{{> global_head }}
+
+<h2 class="archive_title">Everything</h2>
+
+<ul class="archive_list">
+{{#posts}}
+	<li class="archive_list_item">
+		{{date}}:&nbsp;<a class="archive_link" href="{{outfile}}">{{title}}</a>
+	</li>
+{{/posts}}
+</ul>
+
+{{> global_foot }}

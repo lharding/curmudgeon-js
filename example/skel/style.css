@@ -1,0 +1,104 @@
+@font-face {
+  font-family: 'VT323';
+  font-style: normal;
+  font-weight: normal;
+  src: local('VT323'), url('VT323.ttf') format('woff');
+}
+
+body {
+	font-family: Helvetica, Arial, Sans-Serif;
+	margin: 1em;
+	margin-left: auto;
+	margin-right: auto;
+        max-width: 40em;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #aa0000;
+}
+
+h1, h2, h3, h4, h5, h6, .post_date, .post_meta_item, .archive_list_item, .sidebar, .dsq-comment-header, .dsq-request-user-info {
+}
+
+.dsq-connect-msg {
+	color: black;
+}
+
+ul, menu, dir {
+	list-style-type: square;
+}
+
+.post, .post_comments {
+	margin-bottom: 24px;
+	padding: 16px;
+}
+
+.page_container, .archive_title {
+	margin-top: 16px;
+}
+
+.archive_title {
+    margin-left: 16px;
+    padding-top: 16px;
+}
+
+.page_container {
+	width: 100%;
+	clear: both;	
+	margin-left: auto;
+	margin-right: auto;
+	max-width: 40em;
+}
+
+.post_body {
+	text-align: justify;
+	margin-bottom: 16px;
+    font-size: 15px;
+    line-height: 21px;
+}
+
+.post_meta {
+	overflow: hidden;
+}
+
+.post_meta_item {
+	margin-right: 0.4em;
+}
+
+.post_meta, .navbox {
+    font-size: small;
+}
+
+.navbox {
+    float:right;
+    margin-top: 6px;
+}
+
+.navbox_link {
+	margin-right: 16px;
+}
+
+.blog_title_container {
+	clear: both;
+	height: 48px;
+}
+
+.post_title, .sidebar_title {
+	margin-top: 0px;
+}
+
+.blog_title a {
+    text-decoration: none;
+}
+
+.blog_title {
+    font-size: 48px;
+    font-family: Monaco, monospace;
+    margin: 0;
+    margin-left: 16px;
+    float: left;
+}
