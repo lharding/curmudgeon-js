@@ -1,5 +1,4 @@
 'use strict';
-var gulp = require('gulp');
 var Handlebars = require('handlebars');
 var rename = require('gulp-rename');
 var through = require('through');
@@ -7,7 +6,7 @@ var markdown = require( "markdown" ).markdown;
 var fs = require('fs');
 var _ = require('underscore');
 
-module.exports = function(settings) {
+module.exports = function(gulp, settings) {
   var blogModel = settings.blog;
 
   gulp.task('partials', function () {
@@ -40,6 +39,10 @@ module.exports = function(settings) {
         file.contents = new Buffer(postTemplate(_.extend(_.clone(postModel), blogModel, {frontpage: false})));
 
         this.queue(file);
+      },
+      function() {
+        blogModel.posts = _.sortBy(blogModel.posts, 'date').reverse();
+        this.queue(null);
       }))
       .pipe(gulp.dest(settings.paths.out));
   });
@@ -48,7 +51,7 @@ module.exports = function(settings) {
     return gulp.src(settings.src.skel).pipe(gulp.dest(settings.paths.out));
   });
 
-  gulp.task('default', ['skel', 'partials', 'posts'], function () {
+  gulp.task('curmudgeon', ['skel', 'partials', 'posts'], function () {
     return gulp.src(settings.src.templates)
       .pipe(through(function (file) {
         var ctx = _.extend(_.clone(blogModel), {frontpage: true});
