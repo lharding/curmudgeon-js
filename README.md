@@ -22,7 +22,9 @@ Markdown in post bodies will be processed into HTML using the markdown npm modul
 
 ## Using
 
-The cleanest thing to do is use this repo as a private NPM package by putting it into a
+There's a worked example of building a blog with curmudgeon in the 'example' directory.
+For your own projects,
+the cleanest thing to do is use this repo as a private NPM package by putting it into a
 `package.json` in the root of your blog project dir:
 ````
 {
@@ -86,8 +88,16 @@ var settings = {
   }
 };
 
+var gulp = require('gulp');
+
 require('curmudgeon.js')(settings);
+
+gulp.task('watch', function () {
+  gulp.watch(settings.src.posts, ['curmudgeon']);
+  gulp.watch(settings.src.skel, ['curmudgeon']);
+});
+
+gulp.task('default', ['curmudgeon']);
 ````
 
-Curmudgeon obnoxiously registers itself as the default gulp task, so you can now run `gulp`
-in your project dir and it will generate your blog according to the setings above.
+Curmudgeon registers itself as the 'curmudgeon' task, so you can invoke it directly or put it in a watch as above.

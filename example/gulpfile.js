@@ -13,10 +13,10 @@ var settings = {
   },
   blog: {
     url_prefix: '/',
-    blog_title: '#!/bin/lsh',
-    blog_host: 'lsh.io',
-    blog_author: 'Leander Harding',
-    page_title: 'Leander Harding',
+    blog_title: 'Example blog',
+    blog_host: 'myhost.com',
+    blog_author: 'J. Random Hacker',
+    page_title: 'The Window Title',
     now: new Date().toString(),
     posts: []
   }
