@@ -9,6 +9,8 @@ var settings = {
   },
   paths: {
     postBodyTemplate: 'templates/partials/post_full.hbs',
+    tagPageTemplate: 'templates/partials/tag.hbs',
+    tagPages: 'tagged',
     out: 'out'
   },
   blog: {

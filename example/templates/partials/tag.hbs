@@ -1,0 +1,11 @@
+{{> global_head}}
+
+<h2>Posts with tag {{tag}}:</h2>
+
+<ul>
+{{#tagged_posts}}
+  <li><a href="{{../url_prefix}}{{outfile}}">{{title}}</a> ({{date}})
+{{/tagged_posts}}
+</ul>
+
+{{> global_foot}}

@@ -73,6 +73,11 @@ ul, menu, dir {
     font-size: small;
 }
 
+.post_meta ul, .post_meta li {
+    padding: 0;
+    display: inline;
+}
+
 .navbox {
     float:right;
     margin-top: 6px;

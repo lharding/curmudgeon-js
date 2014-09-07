@@ -1,6 +1,6 @@
 Hello, world!
 2112.03.08.5:30
-_
+tag1, tag3
 This is a simple blog post. Line 1 is the title, line 2 is the date (gets sorted in lexical order for archive pages,
 reverse lexical order for the frontpage), line 3 is reserved, the remainder is the content.
 As you can see, the directory structure relative to your `blog/` directory gets mirrored in the output.

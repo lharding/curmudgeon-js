@@ -6,4 +6,12 @@
 	{{/posts}}
 </div>
 
+<div class="tag_sidebar">
+  <ul>
+    {{#tags}}
+      <li><a href="{{../url_prefix}}{{page}}">{{tag}}</a>
+    {{/tags}}
+  </ul>
+</div>
+
 {{> global_foot}}

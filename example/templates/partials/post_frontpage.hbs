@@ -5,6 +5,11 @@
 </div>
 <div class="post_meta">
 <span class="post_date post_meta_item">{{date}}</span>
+<ul class="post_meta_item post_tags">
+{{#tags}}
+  <li><a href="{{url_prefix}}tagged/{{.}}.html">{{.}}</a>
+{{/tags}}
+</ul>
 {{#parent.frontpage}}
 	<a class="post_meta_item" href="{{parent.url_prefix}}{{outfile}}#disqus_thread" data-disqus-identifier="{{outfile}}">Comment</a>
 	<a class="permalink post_meta_item" href="{{parent.url_prefix}}{{outfile}}">Permalink</a>
