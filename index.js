@@ -2,7 +2,7 @@
 var Handlebars = require('handlebars');
 var rename = require('gulp-rename');
 var through = require('through');
-var markdown = require( "markdown" ).markdown;
+var marked = require( 'marked' );
 var File = require('gulp-util').File;
 var fs = require('fs');
 var path = require('path');
@@ -32,7 +32,7 @@ module.exports = function(gulp, settings) {
             title: post[0],
             date: post[1],
             tags: post[2].split(',').map(function(tag) {return tag.trim(); }),
-            body: markdown.toHTML(post.slice(3).join('\n')),
+            body: marked(post.slice(3).join('\n'), 'Maruku'),
             outfile: file.relative
           };
           blogModel.posts.push(postModel);
@@ -69,7 +69,7 @@ module.exports = function(gulp, settings) {
     return gulp.src(settings.src.skel).pipe(gulp.dest(settings.paths.out));
   });
 
-  var tagTemplate = Handlebars.compile(fs.readFileSync(settings.paths.tagPageTemplate).toString());
+  var tagTemplate = settings.paths.tagPageTemplate && Handlebars.compile(fs.readFileSync(settings.paths.tagPageTemplate).toString());
 
   gulp.task('tags', ['partials', 'model'], function() {
     var tags = {};
