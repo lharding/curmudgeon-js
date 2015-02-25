@@ -11,6 +11,10 @@ var _ = require('underscore');
 module.exports = function(gulp, settings) {
   var blogModel = settings.blog;
 
+  settings.handlebars && _.pairs(settings.handlebars.helpers).forEach(function(pair) {
+    Handlebars.registerHelper(pair[0], pair[1]);
+  });
+
   gulp.task('partials', function () {
     return gulp.src(settings.src.partials)
       .pipe(through(function (file) {
@@ -32,7 +36,7 @@ module.exports = function(gulp, settings) {
             title: post[0],
             date: post[1],
             tags: post[2].split(',').map(function(tag) {return tag.trim(); }),
-            body: marked(post.slice(3).join('\n'), 'Maruku'),
+            body: marked(post.slice(3).join('\n')),
             outfile: file.relative
           };
           blogModel.posts.push(postModel);

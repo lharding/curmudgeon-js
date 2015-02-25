@@ -21,6 +21,13 @@ var settings = {
     page_title: 'The Window Title',
     now: new Date().toString(),
     posts: []
+  },
+  handlebars: {
+    helpers: {
+      rightNow: function() {
+        return new Date().getTime() + '';
+      }
+    }
   }
 };
 
