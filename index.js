@@ -9,7 +9,7 @@ var path = require('path');
 var _ = require('underscore');
 
 module.exports = function(gulp, settings) {
-  var blogModel = settings.blog;
+  var blogModel = _.clone(settings.blog);
 
   settings.handlebars && _.pairs(settings.handlebars.helpers).forEach(function(pair) {
     Handlebars.registerHelper(pair[0], pair[1]);
